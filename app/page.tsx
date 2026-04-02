@@ -76,6 +76,7 @@ const bestSellerProducts = [
   {
     image: "/vicofarma/images/produto-01.png",
     title: "Gel intra treino V-10 com 25g de carbo",
+    titleLines: ["Gel intra treino V-10", "com 25g de carbo"],
     unit: "(5 unidades)",
     price: "R$ 56,30",
     composition: "Taurina 1g, Cafeína 80mg, Inositol 50mg, Xarope de Glucose 12,5g, Palatinose 6,25g, Frutose 6,25g, Cloreto de Sódio 104mg.",
@@ -84,6 +85,7 @@ const bestSellerProducts = [
   {
     image: "/vicofarma/images/produto-02.png",
     title: "Shot da imunidade com própolis",
+    titleLines: ["Shot da imunidade", "com própolis"],
     unit: "(30 shots)",
     price: "R$ 133,80",
     composition: "Cúrcuma 200mg, Própolis 200mg, Gengibre 100mg e Vitamina C 500mg.",
@@ -92,6 +94,7 @@ const bestSellerProducts = [
   {
     image: "/vicofarma/images/produto-03.png",
     title: "Shot detox (protetor hepático)",
+    titleLines: ["Shot detox", "(protetor hepático)"],
     unit: "(30 shots)",
     price: "R$ 83,90",
     composition: "Alcachofra 200mg e Silimarina 100mg.",
@@ -100,6 +103,7 @@ const bestSellerProducts = [
   {
     image: "/vicofarma/images/produto-04.png",
     title: "Chocolate nutracêutico - melhoria do sono",
+    titleLines: ["Chocolate nutracêutico", "melhoria do sono"],
     unit: "(30 unidades)",
     price: "R$ 144,30",
     composition: "Melatonina 5mg.",
@@ -603,9 +607,9 @@ export default async function Home() {
             {bestSellerProducts.map((product, index) => (
               <Reveal key={product.title} delay={220 + index * 90} distance={20} scale={0.992}>
                 <article className="rounded-[1.75rem] border border-[rgba(24,35,45,0.06)] bg-white px-4 py-4 shadow-[0_18px_40px_rgba(18,39,27,0.05)] sm:px-5 sm:py-5">
-                  <div className="relative overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,rgba(247,244,238,0.98),rgba(241,238,233,0.96))] p-4">
-                    <div className="pointer-events-none absolute inset-x-[18%] top-0 h-16 rounded-full bg-[rgba(24,118,69,0.05)] blur-2xl" />
-                    <div className="relative aspect-[1/1] overflow-hidden rounded-[1.25rem]">
+                  <div className="relative overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,rgba(247,244,238,0.98),rgba(241,238,233,0.96))]">
+                    <div className="pointer-events-none absolute inset-x-[18%] top-0 z-[1] h-16 rounded-full bg-[rgba(24,118,69,0.05)] blur-2xl" />
+                    <div className="relative aspect-[1/1] overflow-hidden rounded-[1.5rem]">
                       <Image
                         src={product.image}
                         alt={product.title}
@@ -617,13 +621,14 @@ export default async function Home() {
                   </div>
 
                   <div className="pt-4">
-                    <h3 className="font-brand text-[0.76rem] font-extrabold uppercase leading-[1.1] tracking-[-0.03em] text-[var(--color-ink)] xl:text-[0.8rem]">
-                      {product.title}
+                    <h3 className="font-brand min-h-[2.4rem] text-[0.74rem] font-bold uppercase leading-[1.08] tracking-[-0.03em] text-[var(--color-ink)] xl:text-[0.78rem]">
+                      <span className="block">{product.titleLines[0]}</span>
+                      <span className="block">{product.titleLines[1]}</span>
                     </h3>
                     <p className="mt-1 min-h-[1.2rem] text-[0.78rem] font-semibold uppercase tracking-[0.08em] text-[rgba(61,81,97,0.58)]">
                       {product.unit}
                     </p>
-                    <p className="mt-1 text-[2rem] font-extrabold leading-none tracking-[-0.05em] text-[var(--color-ink)]">
+                    <p className="mt-1 text-[1.9rem] font-bold leading-none tracking-[-0.04em] text-[var(--color-ink)]">
                       {product.price}
                     </p>
 
