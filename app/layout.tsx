@@ -32,7 +32,7 @@ const siteUrl = getSiteUrl();
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Vicofarma Recife | Fórmulas Personalizadas",
+    default: "Vicofarma Recife",
     template: "%s | Vicofarma Recife",
   },
   description:
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: "/",
     siteName: "Vicofarma Recife",
-    title: "Vicofarma Recife | Fórmulas Personalizadas",
+    title: "Vicofarma Recife",
     description:
       "Atendimento humanizado e fórmulas sob medida para saúde, desempenho e bem-estar.",
     images: [
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vicofarma Recife | Fórmulas Personalizadas",
+    title: "Vicofarma Recife",
     description:
       "Farmácia de manipulação com atendimento especializado e soluções naturais sob medida.",
     images: ["/vicofarma/images/hero-pessoa-03-hq.webp"],
@@ -82,7 +82,12 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
 };
 
