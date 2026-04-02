@@ -72,6 +72,41 @@ const qualityAreas = [
   },
 ];
 
+const bestSellerProducts = [
+  {
+    image: "/vicofarma/images/produto-01.png",
+    title: "Gel intra treino V-10 com 25g de carbo",
+    unit: "(5 unidades)",
+    price: "R$ 56,30",
+    composition: "Taurina 1g, Cafeína 80mg, Inositol 50mg, Xarope de Glucose 12,5g, Palatinose 6,25g, Frutose 6,25g, Cloreto de Sódio 104mg.",
+    usage: "1 unidade durante o treino. Sabores: laranja, limão, uva, abacaxi, ocean blue, maçã verde e frutas vermelhas.",
+  },
+  {
+    image: "/vicofarma/images/produto-02.png",
+    title: "Shot da imunidade com própolis",
+    unit: "(30 shots)",
+    price: "R$ 133,80",
+    composition: "Cúrcuma 200mg, Própolis 200mg, Gengibre 100mg e Vitamina C 500mg.",
+    usage: "Tomar 1 shot ao dia. Sabor de sua preferência.",
+  },
+  {
+    image: "/vicofarma/images/produto-03.png",
+    title: "Shot detox (protetor hepático)",
+    unit: "(30 shots)",
+    price: "R$ 83,90",
+    composition: "Alcachofra 200mg e Silimarina 100mg.",
+    usage: "Tomar 1 shot ao dia.",
+  },
+  {
+    image: "/vicofarma/images/produto-04.png",
+    title: "Chocolate nutracêutico - melhoria do sono",
+    unit: "(30 unidades)",
+    price: "R$ 144,30",
+    composition: "Melatonina 5mg.",
+    usage: "Consumir 1 chocolate à noite, 30 minutos antes de dormir.",
+  },
+];
+
 const bestSellerStories = [
   {
     image: "/vicofarma/images/story-01.webp",
@@ -564,7 +599,76 @@ export default async function Home() {
             </div>
           </Reveal>
 
-          <div className="mt-10">
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {bestSellerProducts.map((product, index) => (
+              <Reveal key={product.title} delay={220 + index * 90} distance={20} scale={0.992}>
+                <article className="rounded-[1.75rem] border border-[rgba(24,35,45,0.06)] bg-white px-4 py-4 shadow-[0_18px_40px_rgba(18,39,27,0.05)] sm:px-5 sm:py-5">
+                  <div className="relative overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,rgba(247,244,238,0.98),rgba(241,238,233,0.96))] p-4">
+                    <div className="pointer-events-none absolute inset-x-[18%] top-0 h-16 rounded-full bg-[rgba(24,118,69,0.05)] blur-2xl" />
+                    <div className="relative aspect-[1/1] overflow-hidden rounded-[1.25rem]">
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="pt-4">
+                    <h3 className="font-brand text-[0.76rem] font-extrabold uppercase leading-[1.1] tracking-[-0.03em] text-[var(--color-ink)] xl:text-[0.8rem]">
+                      {product.title}
+                    </h3>
+                    <p className="mt-1 min-h-[1.2rem] text-[0.78rem] font-semibold uppercase tracking-[0.08em] text-[rgba(61,81,97,0.58)]">
+                      {product.unit}
+                    </p>
+                    <p className="mt-1 text-[2rem] font-extrabold leading-none tracking-[-0.05em] text-[var(--color-ink)]">
+                      {product.price}
+                    </p>
+
+                    <details className="group mt-4 rounded-[1rem] border border-[rgba(24,35,45,0.08)] bg-[rgba(250,249,246,0.9)] px-4 py-3">
+                      <summary className="flex cursor-pointer list-none items-center justify-between text-[0.98rem] font-medium text-[var(--color-muted)]">
+                        Ver mais
+                        <span className="text-lg leading-none text-[var(--color-brand)] transition group-open:rotate-45">
+                          +
+                        </span>
+                      </summary>
+                      <div className="mt-3 space-y-3 text-[0.88rem] leading-6 text-[var(--color-muted)]">
+                        <p>
+                          <strong className="text-[var(--color-ink)]">Composição:</strong>{" "}
+                          {product.composition}
+                        </p>
+                        <p>
+                          <strong className="text-[var(--color-ink)]">Modo de usar:</strong>{" "}
+                          {product.usage}
+                        </p>
+                      </div>
+                    </details>
+
+                    <a
+                      href={settings.ctaHref}
+                      className="cta-button font-brand mt-4 inline-flex px-5 py-3 text-sm font-semibold tracking-[-0.01em]"
+                    >
+                      <span className="text-white">{settings.ctaLabel}</span>
+                    </a>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        <section id="stories" className="pt-10 sm:pt-14">
+          <Reveal delay={120} distance={18}>
+            <div className="mx-auto max-w-[760px] text-center">
+              <h2 className="font-brand text-[1.95rem] font-semibold leading-[1.06] tracking-[-0.035em] text-[var(--color-ink)] sm:text-[2.55rem]">
+                Experiências reais
+              </h2>
+            </div>
+          </Reveal>
+
+          <div className="mt-8">
             <Reveal delay={220} distance={20} scale={0.992}>
               <StoryCarousel items={bestSellerStories} />
             </Reveal>
