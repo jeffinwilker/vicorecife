@@ -1,8 +1,8 @@
 ﻿import Image from "next/image";
 import { Clock3, MapPin, Phone } from "lucide-react";
+import Script from "next/script";
 import { ProcessSection } from "@/components/process-section";
 import { Reveal } from "@/components/reveal";
-import { StoryCarousel } from "@/components/story-carousel";
 import { getSiteSettings } from "@/lib/site-settings";
 import { getSiteUrl } from "@/lib/site-url";
 
@@ -111,24 +111,8 @@ const bestSellerProducts = [
   },
 ];
 
-const bestSellerStories = [
-  {
-    image: "/vicofarma/images/story-01.webp",
-    alt: "Story de cliente falando sobre produto da Vicofarma",
-  },
-  {
-    image: "/vicofarma/images/story-02.webp",
-    alt: "Story de cliente mostrando embalagem da Vicofarma",
-  },
-  {
-    image: "/vicofarma/images/story-03.webp",
-    alt: "Story com sugestão de rotina e suplementação",
-  },
-  {
-    image: "/vicofarma/images/story-04.webp",
-    alt: "Story com clientes e embalagem da Vicofarma",
-  },
-];
+// Mantem os dados arquivados enquanto a secao segue comentada.
+void bestSellerProducts;
 
 const processSteps = [
   {
@@ -594,6 +578,7 @@ export default async function Home() {
 
         <ProcessSection ctaHref={settings.ctaHref} steps={processSteps} />
 
+        {/* Seção ocultada temporariamente para não aparecer na página.
         <section id="mais-vendidas" className="pt-8 sm:pt-12">
           <Reveal delay={120} distance={18}>
             <div className="mx-auto max-w-[760px] text-center">
@@ -663,7 +648,9 @@ export default async function Home() {
             ))}
           </div>
         </section>
+        */}
 
+        {/* Seção ocultada temporariamente para não aparecer na página.
         <section id="stories" className="pt-10 sm:pt-14">
           <Reveal delay={120} distance={18}>
             <div className="mx-auto max-w-[760px] text-center">
@@ -678,6 +665,53 @@ export default async function Home() {
               <StoryCarousel items={bestSellerStories} />
             </Reveal>
           </div>
+        </section>
+        */}
+
+        <section id="instagram" className="pt-10 sm:pt-14">
+          <Reveal delay={120} distance={18}>
+            <div className="mx-auto max-w-[760px] text-center">
+              <p className="font-brand text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-[var(--color-brand)] sm:text-[0.8rem]">
+                Instagram
+              </p>
+              <h2 className="mt-3 font-brand text-[1.95rem] font-semibold leading-[1.06] tracking-[-0.035em] text-[var(--color-ink)] sm:text-[2.55rem]">
+                Siga a Vicofarma no Instagram
+              </h2>
+              <p className="mx-auto mt-4 max-w-[38rem] text-[0.98rem] leading-7 text-[var(--color-muted)]">
+                Acompanhe as publicações mais recentes direto do Instagram.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={220} distance={20} scale={0.992}>
+            <div className="mt-8 overflow-hidden rounded-[2.35rem] border border-[rgba(24,35,45,0.06)] bg-[linear-gradient(180deg,rgba(252,251,248,0.98),rgba(255,255,255,0.92))] px-4 py-5 shadow-[0_24px_52px_rgba(18,39,27,0.05)] sm:px-6 sm:py-6">
+              <div
+                className="embedsocial-hashtag"
+                data-ref="7aef3ac3e7d3b48595b2dd47529d67c849d2ac53"
+              >
+                <a
+                  className="feed-powered-by-es feed-powered-by-es-feed-img es-widget-branding"
+                  href="https://embedsocial.com/instagram-widget/"
+                  target="_blank"
+                  rel="noreferrer"
+                  title="Instagram widget"
+                >
+                  {/* O snippet do EmbedSocial exige essa imagem externa de branding. */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="https://embedsocial.com/cdn/icon/embedsocial-logo.webp"
+                    alt="EmbedSocial"
+                  />
+                  <div className="es-widget-branding-text">Instagram widget</div>
+                </a>
+              </div>
+            </div>
+          </Reveal>
+          <Script
+            id="embedsocial-hashtag-script"
+            src="https://embedsocial.com/cdn/ht.js"
+            strategy="lazyOnload"
+          />
         </section>
 
         <section id="contato" className="pt-10 sm:pt-14">
