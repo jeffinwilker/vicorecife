@@ -783,8 +783,34 @@ export default async function Home() {
             </Reveal>
           </div>
         </section>
-        <footer className="pb-8 text-center text-sm text-[var(--color-muted)]">
-          © {settings.copyrightYear} Vico Recife. Todos os direitos reservados.
+        <footer className="pb-8 pt-6">
+          <div className="mx-auto max-w-[980px] rounded-[1.75rem] border border-[rgba(24,35,45,0.08)] bg-white/78 px-5 py-5 text-sm text-[var(--color-muted)] shadow-[0_16px_38px_rgba(18,39,27,0.05)] backdrop-blur sm:px-7">
+            <div className="grid gap-2 text-center sm:grid-cols-2 sm:text-left">
+              <p>
+                <span className="font-semibold text-[var(--color-ink)]">Razão Social:</span>{" "}
+                FITPHARMA LTDA
+              </p>
+              <p>
+                <span className="font-semibold text-[var(--color-ink)]">CNPJ:</span>{" "}
+                51.258.582/0001-22
+              </p>
+              <p>
+                <span className="font-semibold text-[var(--color-ink)]">Endereço:</span>{" "}
+                Av. Conselheiro Aguiar, nº 1472, Loja 17 – Boa Viagem, Recife/PE
+              </p>
+              <p>
+                <span className="font-semibold text-[var(--color-ink)]">CEP:</span> 51.111-010
+              </p>
+              <p className="sm:col-span-2">
+                <span className="font-semibold text-[var(--color-ink)]">Telefone:</span>{" "}
+                81 33267988
+              </p>
+            </div>
+
+            <p className="mt-4 text-center text-xs text-[var(--color-muted)]">
+              © {settings.copyrightYear} Vico Recife. Todos os direitos reservados.
+            </p>
+          </div>
         </footer>
       </section>
     </main>
