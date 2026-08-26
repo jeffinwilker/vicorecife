@@ -792,7 +792,7 @@ export default async function Home() {
               </p>
               <p>
                 <span className="font-semibold text-[var(--color-ink)]">CNPJ:</span>{" "}
-                51.258.582/0001-22
+                51.268.582/0001-22
               </p>
               <p>
                 <span className="font-semibold text-[var(--color-ink)]">Endereço:</span>{" "}
@@ -803,7 +803,7 @@ export default async function Home() {
               </p>
               <p className="sm:col-span-2">
                 <span className="font-semibold text-[var(--color-ink)]">Telefone:</span>{" "}
-                81 33267988
+                (81) 9247-7200
               </p>
             </div>
 
